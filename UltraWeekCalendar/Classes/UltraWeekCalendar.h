@@ -11,6 +11,7 @@
 @protocol UltraWeekCalendarDelegate <NSObject>
 @optional
 - (void)dateButtonClicked;
+- (void)monthStringSet:(NSString*)monthString;
 @end
 
 @interface UltraWeekCalendar : UIView <UIScrollViewDelegate>
@@ -45,3 +46,4 @@
 @property (atomic, strong) NSDate *selectedDate;
 
 @end
+

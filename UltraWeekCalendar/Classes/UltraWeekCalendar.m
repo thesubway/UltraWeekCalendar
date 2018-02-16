@@ -10,27 +10,27 @@
 
 @implementation UltraWeekCalendar
 {
-    @private NSCalendar *gregorianCalendar;
-    @private NSDateComponents *components;
-    @private NSDateFormatter *dateFormatter;
-    @private UIView *contentView;
-    @private UIView *monthView;
-    @private UIView *dayContentView;
-    @private UIButton *dayBtn;
-    @private UILabel *fixedMonthLabel;
-    @private NSMutableArray *breakPointMonths;
-    @private NSMutableArray *breakPointMonthsName;
-    @private UILabel *dayNameLbl;
-    @private UILabel *dayNumberLbl;
-    @private NSDate *printedDate;
+@private NSCalendar *gregorianCalendar;
+@private NSDateComponents *components;
+@private NSDateFormatter *dateFormatter;
+@private UIView *contentView;
+@private UIView *monthView;
+@private UIView *dayContentView;
+@private UIButton *dayBtn;
+@private UILabel *fixedMonthLabel;
+@private NSMutableArray *breakPointMonths;
+@private NSMutableArray *breakPointMonthsName;
+@private UILabel *dayNameLbl;
+@private UILabel *dayNumberLbl;
+@private NSDate *printedDate;
     
-    @private int monthContentWidth;
-    @private int dayContentWidth;
-    @private int currentMonth;
-    @private int previousMonth;
-    @private int monthNamePosition;
-    @private int monthNumber;
-    @private int selectedDay;
+@private int monthContentWidth;
+@private int dayContentWidth;
+@private int currentMonth;
+@private int previousMonth;
+@private int monthNamePosition;
+@private int monthNumber;
+@private int selectedDay;
 }
 
 @synthesize delegate;
@@ -86,11 +86,11 @@
     [fixedMonthLabel setTextColor:self.monthTextColor];
     [fixedMonthLabel setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
     [fixedMonthLabel setFrame:CGRectMake(0, 0, self.fixedMonthLabelWidth, contentView.frame.size.height)];
-    [monthView addSubview:fixedMonthLabel];
-
+    //[monthView addSubview:fixedMonthLabel];
+    
     [breakPointMonthsName addObject:monthString];
     
-    self.dayScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(fixedMonthLabel.frame.size.width+1, 0, self.frame.size.width-fixedMonthLabel.frame.size.width-1, contentView.frame.size.height)];
+    self.dayScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, contentView.frame.size.height)];
     [self.dayScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [self.dayScrollView setDelegate:self];
     [self.dayScrollView setShowsHorizontalScrollIndicator:FALSE];
@@ -327,9 +327,11 @@
     for (int i=0; i<[breakPointMonths count]; i++) {
         if (scrollView.contentOffset.x <= [[breakPointMonths objectAtIndex:i] intValue]) {
             [fixedMonthLabel setText:[breakPointMonthsName objectAtIndex:i]];
+            [self.delegate monthStringSet:[breakPointMonthsName objectAtIndex:i]];
             break;
         }
     }
 }
 
 @end
+
