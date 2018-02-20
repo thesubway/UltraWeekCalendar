@@ -126,6 +126,9 @@
         }
         
     }
+    //Added to set the first day
+    [[self viewWithTag:2000] setTextColor:self.dayNameSelectedTextColor];
+    [[self viewWithTag:3000] setTextColor:self.dayNumberSelectedTextColor];
     
     int totalWidth = (int)(dayContentWidth * [components day]) + (monthContentWidth * monthNumber);
     [breakPointMonths addObject:[NSNumber numberWithInt:totalWidth]];
