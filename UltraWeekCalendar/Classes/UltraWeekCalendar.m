@@ -192,12 +192,7 @@
     [dayNameLbl setTextColor:self.dayNameTextColor];
     
     int yourDOW = (int)[[gregorianCalendar components:NSCalendarUnitWeekday fromDate:printedDate] weekday];
-    //different style for weekend names
-    if (yourDOW==1 || yourDOW==7) {
-        [dayNameLbl setFont:[UIFont fontWithName:@"Avenir-Heavy" size:13]];
-    } else {
-        [dayNameLbl setFont:[UIFont fontWithName:@"Avenir-Book" size:13]];
-    }
+    [dayNameLbl setFont:[UIFont fontWithName:@"Avenir-Book" size:13]];
     [dayNameLbl setText:[dayNameString capitalizedString]];
     [dayContentView addSubview:dayNameLbl];
     
