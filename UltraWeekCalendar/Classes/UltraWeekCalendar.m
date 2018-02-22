@@ -189,7 +189,7 @@
     [dateFormatter setDateFormat:@"eee"];
     NSString *dayNameString = [dateFormatter stringFromDate:currentDate];
     
-    dayNameLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 3, dayContentView.frame.size.width, dayContentView.frame.size.height/2)];
+    dayNameLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, dayContentView.frame.size.height/2, dayContentView.frame.size.width, dayContentView.frame.size.height/2)];
     dayNameLbl.tag = index+2000;
     [dayNameLbl setTextAlignment:NSTextAlignmentCenter];
     [dayNameLbl setTextColor:self.dayNameTextColor];
@@ -202,11 +202,11 @@
     [dateFormatter setDateFormat:@"dd"];
     NSString *dayString = [dateFormatter stringFromDate:currentDate];
     
-    dayNumberLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, dayContentView.frame.size.height/2, dayContentView.frame.size.width, dayContentView.frame.size.height/2)];
+    dayNumberLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 3, dayContentView.frame.size.width, dayContentView.frame.size.height/2)];
     dayNumberLbl.tag = index+3000;
     [dayNumberLbl setTextAlignment:NSTextAlignmentCenter];
     [dayNumberLbl setTextColor:self.dayNumberTextColor];
-    [dayNumberLbl setFont:[UIFont fontWithName:@"Avenir-Medium" size:15]];
+    [dayNumberLbl setFont:[UIFont fontWithName:@"Avenir-Medium" size:21]];
     [dayNumberLbl setText:dayString];
     [dayContentView addSubview:dayNumberLbl];
     
