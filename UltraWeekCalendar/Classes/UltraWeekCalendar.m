@@ -164,18 +164,18 @@
     [breakPointMonths addObject:[NSNumber numberWithInt:monthNamePosition]];
     [breakPointMonthsName addObject:currentMonthString];
     
-    UILabel *monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(monthNamePosition, 0, monthContentWidth, contentView.frame.size.height)];
-    monthLabel.text = currentMonthString;
-    monthLabel.textAlignment = NSTextAlignmentCenter;
-    [monthLabel setBackgroundColor:self.monthBGColor];
-    [monthLabel setFont:[UIFont fontWithName:@"Avenir-Medium" size:15]];
-    [monthLabel setTextColor:self.monthTextColor];
-    [monthLabel setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
-    [monthLabel setFrame:CGRectMake(monthNamePosition, 0, monthContentWidth, contentView.frame.size.height)];
-    [self.dayScrollView addSubview:monthLabel];
-    
-    previousMonth = currentMonth;
-    monthNumber++;
+    /*UILabel *monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(monthNamePosition, 0, monthContentWidth, contentView.frame.size.height)];
+     monthLabel.text = currentMonthString;
+     monthLabel.textAlignment = NSTextAlignmentCenter;
+     [monthLabel setBackgroundColor:self.monthBGColor];
+     [monthLabel setFont:[UIFont fontWithName:@"Avenir-Medium" size:15]];
+     [monthLabel setTextColor:self.monthTextColor];
+     [monthLabel setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+     [monthLabel setFrame:CGRectMake(monthNamePosition, 0, monthContentWidth, contentView.frame.size.height)];
+     [self.dayScrollView addSubview:monthLabel];
+     
+     previousMonth = currentMonth;
+     monthNumber++;*/
 }
 
 #pragma mark - render Day
@@ -332,4 +332,3 @@
 }
 
 @end
-
